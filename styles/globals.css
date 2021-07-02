@@ -1,16 +1,28 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.postcard-image {
+  height: 100px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@screen md {
+  .postcard-image {
+    height: 150px;
+  }
+}
+@screen xl {
+  .postcard-image {
+    height: 200px;
+  }
 }
 
-* {
-  box-sizing: border-box;
+.post-quote {
+  @apply mt-8 mb-4 p-6 bg-indigo-700 text-indigo-200 text-lg relative;
+}
+.post-quote:before {
+  @apply absolute w-8 top-2 left-2 z-0 opacity-20;
+  content: "";
+  height: 32px;
+  background: url(/images/quotes.svg);
 }

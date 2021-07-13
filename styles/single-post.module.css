@@ -22,25 +22,25 @@
   @apply text-green-800;
 }
 
-.postImage {
-  @apply w-full bg-cover bg-no-repeat bg-center mb-4;
+.post-image {
+  @apply w-full relative bg-gray-700;
   height: 120px;
 }
 
 @screen md {
-  .postImage {
+  .post-image {
     height: 200px;
   }
 }
 
 @screen lg {
-  .postImage {
+  .post-image {
     height: 300px;
   }
 }
 
 @screen 2xl {
-  .postImage {
+  .post-image {
     height: 400px;
   }
 }

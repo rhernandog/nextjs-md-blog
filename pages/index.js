@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import bgImage from "../public/home-bg.jpg";
+import { blurData } from "../public/blurData";
+// import bgImage from "../public/home-bg.jpg";
 
 const containerStyles = {
   height: "100vh",
@@ -23,8 +24,9 @@ export default function Home() {
         <div className="absolute w-full z-0 h-screen opacity-10 inset-0">
           <Image
             alt="HomeBG"
-            src={bgImage}
+            src="/home-bg.jpg"
             placeholder="blur"
+            blurDataURL={blurData}
             layout="fill"
             objectFit="cover"
             quality={100}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import blurImageData from "../public/blur-bg.jpg";
+import { blurData } from "../public/blurData";
 
 export default function PostCard({ post, slug }) {
   return (
@@ -12,13 +12,13 @@ export default function PostCard({ post, slug }) {
           <div
             className="relative w-full border transition-shadow bg-gray-50 border-gray-300 rounded-md cursor-pointer hover:shadow-lg"
           >
-            <div className="postcard-image w-full relative">
+            <div className="postcard-image w-full relative bg-gray-700">
               <Image
                 alt="HomeBG"
                 src={post.cover_image}
                 layout="fill"
                 placeholder="blur"
-                blurDataURL={blurImageData}
+                blurDataURL={blurData}
                 objectFit="cover"
                 quality={100}
               />

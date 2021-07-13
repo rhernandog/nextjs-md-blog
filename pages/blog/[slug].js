@@ -3,9 +3,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import marked from "marked";
-import Link from "next/link";
+// import Link from "next/link";
+import Image from "next/image";
 import styles from "../../styles/single-post.module.css";
-import blurImageData from "../../public/blur-bg.jpg";
+import { blurData } from "../../public/blurData";
 
 export default function SinglePost({ data, slug, content }) {
   const { title, date, author, cover_image } = data;
@@ -35,10 +36,17 @@ export default function SinglePost({ data, slug, content }) {
         />
         <span className="text-gray-700">Posted on {date}</span>
       </div>
-      <div
-        className={styles.postImage}
-        style={{ backgroundImage: `url(${cover_image})` }}
-      />
+      <div className={styles["post-image"]}>
+        <Image
+          alt="Post Image"
+          src={`/${cover_image}`}
+          layout="fill"
+          placeholder="blur"
+          blurDataURL={blurData}
+          objectFit="cover"
+          quality={100}
+        />
+      </div>
       <div
         dangerouslySetInnerHTML={{ __html: marked(content) }}
         className={styles.singlePostContent}
